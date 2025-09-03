@@ -195,7 +195,7 @@ export default function ContactSection() {
                     <FormItem>
                       <FormLabel data-testid="label-company">Company</FormLabel>
                       <FormControl>
-                        <Input placeholder="Your Company Inc." {...field} data-testid="input-company" />
+                        <Input placeholder="Your Company Inc." {...field} value={field.value ?? ""} data-testid="input-company" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -223,7 +223,13 @@ export default function ContactSection() {
                     <FormItem>
                       <FormLabel data-testid="label-phone">Phone</FormLabel>
                       <FormControl>
-                        <Input type="tel" placeholder="(555) 123-4567" {...field} data-testid="input-phone" />
+                        <Input
+                          type="tel"
+                          placeholder="(555) 123-4567"
+                          {...field}
+                          value={field.value ?? ""}
+                          data-testid="input-phone"
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -236,7 +242,7 @@ export default function ContactSection() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel data-testid="label-vehicle-type">Vehicle Type Interest</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <Select onValueChange={field.onChange} defaultValue={field.value ?? undefined}>
                         <FormControl>
                           <SelectTrigger data-testid="select-vehicle-type">
                             <SelectValue placeholder="Select vehicle type" />
@@ -266,6 +272,7 @@ export default function ContactSection() {
                           className="resize-none"
                           rows={4}
                           {...field}
+                          value={field.value ?? ""}
                           data-testid="input-message"
                         />
                       </FormControl>

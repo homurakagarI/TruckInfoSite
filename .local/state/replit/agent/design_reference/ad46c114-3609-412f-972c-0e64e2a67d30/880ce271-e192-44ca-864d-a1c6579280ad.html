@@ -1,0 +1,794 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruckPro Industries - Premium Commercial Vehicles & Logistics Solutions</title>
+    <meta name="description" content="Leading provider of commercial trucks, logistics solutions, and fleet management services. Reliable, powerful, and built for your business needs.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                borderRadius: {
+                    lg: "var(--radius)",
+                    md: "calc(var(--radius) - 2px)", 
+                    sm: "calc(var(--radius) - 4px)",
+                },
+                colors: {
+                    background: "var(--background)",
+                    foreground: "var(--foreground)",
+                    card: {
+                        DEFAULT: "var(--card)",
+                        foreground: "var(--card-foreground)",
+                    },
+                    popover: {
+                        DEFAULT: "var(--popover)",
+                        foreground: "var(--popover-foreground)",
+                    },
+                    primary: {
+                        DEFAULT: "var(--primary)",
+                        foreground: "var(--primary-foreground)",
+                    },
+                    secondary: {
+                        DEFAULT: "var(--secondary)",
+                        foreground: "var(--secondary-foreground)",
+                    },
+                    muted: {
+                        DEFAULT: "var(--muted)",
+                        foreground: "var(--muted-foreground)",
+                    },
+                    accent: {
+                        DEFAULT: "var(--accent)",
+                        foreground: "var(--accent-foreground)",
+                    },
+                    destructive: {
+                        DEFAULT: "var(--destructive)",
+                        foreground: "var(--destructive-foreground)",
+                    },
+                    border: "var(--border)",
+                    input: "var(--input)",
+                    ring: "var(--ring)",
+                }
+            }
+        }
+    };
+    </script>
+    <style>
+        :root {
+            --background: hsl(210 40% 98%);
+            --foreground: hsl(222.2 84% 4.9%);
+            --card: hsl(0 0% 100%);
+            --card-foreground: hsl(222.2 84% 4.9%);
+            --popover: hsl(0 0% 100%);
+            --popover-foreground: hsl(222.2 84% 4.9%);
+            --primary: hsl(214 84% 34%);
+            --primary-foreground: hsl(210 40% 98%);
+            --secondary: hsl(215 16% 47%);
+            --secondary-foreground: hsl(210 40% 98%);
+            --muted: hsl(210 40% 96%);
+            --muted-foreground: hsl(215.4 16.3% 46.9%);
+            --accent: hsl(22 84% 48%);
+            --accent-foreground: hsl(210 40% 98%);
+            --destructive: hsl(0 84.2% 60.2%);
+            --destructive-foreground: hsl(210 40% 98%);
+            --border: hsl(214.3 31.8% 91.4%);
+            --input: hsl(214.3 31.8% 91.4%);
+            --ring: hsl(214 84% 34%);
+            --radius: 0.5rem;
+            --font-sans: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, hsl(214 84% 34%) 0%, hsl(215 16% 47%) 100%);
+        }
+        
+        .section-divider {
+            background: linear-gradient(90deg, transparent 0%, hsl(214.3 31.8% 91.4%) 50%, transparent 100%);
+            height: 1px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-background text-foreground font-sans">
+    <!-- @COMPONENT: Navigation -->
+    <nav class="bg-card shadow-lg fixed w-full top-0 z-50 border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-primary">TruckPro</h1>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#services" class="text-muted-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Services</a>
+                        <a href="#fleet" class="text-muted-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Fleet</a>
+                        <a href="#about" class="text-muted-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#contact" class="text-muted-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                        <a href="#contact" class="bg-accent hover:bg-accent/90 text-accent-foreground px-4 py-2 rounded-md text-sm font-medium transition-colors">Get Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-muted-foreground hover:text-primary focus:outline-none focus:text-primary" data-event="click:toggleMobileMenu">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-card border-t border-border">
+                <a href="#home" class="text-foreground hover:text-primary block px-3 py-2 text-base font-medium">Home</a>
+                <a href="#services" class="text-muted-foreground hover:text-primary block px-3 py-2 text-base font-medium">Services</a>
+                <a href="#fleet" class="text-muted-foreground hover:text-primary block px-3 py-2 text-base font-medium">Fleet</a>
+                <a href="#about" class="text-muted-foreground hover:text-primary block px-3 py-2 text-base font-medium">About</a>
+                <a href="#contact" class="text-muted-foreground hover:text-primary block px-3 py-2 text-base font-medium">Contact</a>
+                <a href="#contact" class="bg-accent text-accent-foreground block px-3 py-2 text-base font-medium rounded-md mt-2">Get Quote</a>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-16">
+        <!-- Modern trucks background image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080" 
+                 alt="Modern commercial trucks on highway" 
+                 class="w-full h-full object-cover"/>
+            <div class="absolute inset-0 hero-gradient opacity-75"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-black text-primary-foreground mb-6 leading-tight">
+                    Built for the 
+                    <span class="text-accent">Road Ahead</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-primary-foreground/90 mb-8 font-medium leading-relaxed">
+                    Premium commercial vehicles and logistics solutions that power your business forward. 
+                    Reliable, efficient, and engineered for performance.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105">
+                        Get Your Quote
+                    </a>
+                    <a href="#fleet" class="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
+                        View Fleet
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-primary-foreground animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Services Section -->
+    <section id="services" class="py-20 bg-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Services</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                    Comprehensive trucking solutions designed to meet your business needs with unmatched reliability and efficiency.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Fleet Management -->
+                <div class="bg-card rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-truck text-2xl text-primary-foreground"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground mb-4">Fleet Management</h3>
+                    <p class="text-muted-foreground mb-6">
+                        Complete fleet management solutions including maintenance scheduling, route optimization, and performance monitoring.
+                    </p>
+                    <a href="#contact" class="text-primary font-semibold hover:text-primary/80 transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Logistics Solutions -->
+                <div class="bg-card rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-accent rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-route text-2xl text-accent-foreground"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground mb-4">Logistics Solutions</h3>
+                    <p class="text-muted-foreground mb-6">
+                        End-to-end logistics planning and execution with real-time tracking and delivery optimization.
+                    </p>
+                    <a href="#contact" class="text-primary font-semibold hover:text-primary/80 transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Commercial Sales -->
+                <div class="bg-card rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-secondary rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-handshake text-2xl text-secondary-foreground"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground mb-4">Commercial Sales</h3>
+                    <p class="text-muted-foreground mb-6">
+                        New and certified pre-owned commercial vehicles with financing options and warranty coverage.
+                    </p>
+                    <a href="#contact" class="text-primary font-semibold hover:text-primary/80 transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Maintenance & Repair -->
+                <div class="bg-card rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-wrench text-2xl text-primary-foreground"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground mb-4">Maintenance & Repair</h3>
+                    <p class="text-muted-foreground mb-6">
+                        Professional maintenance and repair services with certified technicians and genuine parts.
+                    </p>
+                    <a href="#contact" class="text-primary font-semibold hover:text-primary/80 transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Driver Training -->
+                <div class="bg-card rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-accent rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-graduation-cap text-2xl text-accent-foreground"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground mb-4">Driver Training</h3>
+                    <p class="text-muted-foreground mb-6">
+                        Comprehensive driver training programs for safety, efficiency, and regulatory compliance.
+                    </p>
+                    <a href="#contact" class="text-primary font-semibold hover:text-primary/80 transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- 24/7 Support -->
+                <div class="bg-card rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-secondary rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-clock text-2xl text-secondary-foreground"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground mb-4">24/7 Support</h3>
+                    <p class="text-muted-foreground mb-6">
+                        Round-the-clock emergency support and roadside assistance to keep your fleet moving.
+                    </p>
+                    <a href="#contact" class="text-primary font-semibold hover:text-primary/80 transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Services Section -->
+
+    <!-- @COMPONENT: Fleet Showcase -->
+    <section id="fleet" class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Fleet</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                    Modern, reliable commercial vehicles built for performance, efficiency, and durability.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Heavy Duty Trucks -->
+                <div class="bg-card rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <!-- Modern heavy duty truck image -->
+                    <img src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Heavy duty commercial truck" 
+                         class="w-full h-64 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-card-foreground mb-3">Heavy Duty Trucks</h3>
+                        <p class="text-muted-foreground mb-4">
+                            Built for the toughest jobs with superior power, reliability, and fuel efficiency.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-semibold">Starting at $85,000</span>
+                            <a href="#contact" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Medium Duty Trucks -->
+                <div class="bg-card rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <!-- Medium duty delivery truck image -->
+                    <img src="https://images.unsplash.com/photo-1566024287286-457247b70310?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Medium duty delivery truck" 
+                         class="w-full h-64 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-card-foreground mb-3">Medium Duty Trucks</h3>
+                        <p class="text-muted-foreground mb-4">
+                            Perfect balance of capability and maneuverability for urban and regional delivery.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-semibold">Starting at $55,000</span>
+                            <a href="#contact" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Light Commercial Vehicles -->
+                <div class="bg-card rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <!-- Light commercial van image -->
+                    <img src="https://images.unsplash.com/photo-1623874514711-0f321325f318?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Light commercial delivery van" 
+                         class="w-full h-64 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-card-foreground mb-3">Light Commercial</h3>
+                        <p class="text-muted-foreground mb-4">
+                            Efficient and versatile vehicles ideal for small business and local delivery needs.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-semibold">Starting at $35,000</span>
+                            <a href="#contact" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fleet Statistics -->
+            <div class="bg-primary rounded-2xl p-8 md:p-12 text-center">
+                <h3 class="text-3xl md:text-4xl font-bold text-primary-foreground mb-8">Trusted by Industry Leaders</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div>
+                        <div class="text-4xl md:text-5xl font-black text-accent mb-2" data-bind="stats.vehicles">500+</div>
+                        <div class="text-primary-foreground font-medium">Vehicles Sold</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-black text-accent mb-2" data-bind="stats.clients">200+</div>
+                        <div class="text-primary-foreground font-medium">Happy Clients</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-black text-accent mb-2" data-bind="stats.experience">15+</div>
+                        <div class="text-primary-foreground font-medium">Years Experience</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl md:text-5xl font-black text-accent mb-2" data-bind="stats.uptime">99.8%</div>
+                        <div class="text-primary-foreground font-medium">Fleet Uptime</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Fleet Showcase -->
+
+    <!-- @COMPONENT: About Section -->
+    <section id="about" class="py-20 bg-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                        Built on Excellence, 
+                        <span class="text-primary">Driven by Innovation</span>
+                    </h2>
+                    <p class="text-xl text-muted-foreground mb-8 leading-relaxed">
+                        For over 15 years, TruckPro Industries has been at the forefront of commercial vehicle innovation. 
+                        We understand that your business depends on reliable transportation, and we're committed to 
+                        delivering solutions that exceed your expectations.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-primary-foreground text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-card-foreground mb-2">Industry-Leading Reliability</h4>
+                                <p class="text-muted-foreground">Our vehicles consistently achieve 99.8% uptime, minimizing your operational disruptions.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-primary-foreground text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-card-foreground mb-2">Comprehensive Support</h4>
+                                <p class="text-muted-foreground">24/7 emergency support and nationwide service network to keep you moving.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-primary-foreground text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-card-foreground mb-2">Environmental Responsibility</h4>
+                                <p class="text-muted-foreground">Advanced fuel efficiency and emission reduction technologies in every vehicle.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="#contact" class="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-lg inline-block">
+                            Partner With Us
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Truck industry facility image -->
+                    <img src="https://images.unsplash.com/photo-1586861203927-800a5acdcc4d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=900" 
+                         alt="Modern truck manufacturing facility with quality control" 
+                         class="rounded-2xl shadow-2xl w-full"/>
+                    
+                    <!-- Overlay stats card -->
+                    <div class="absolute -bottom-8 -left-8 bg-card rounded-xl shadow-xl p-6 border border-border">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-1" data-bind="certifications.iso">ISO 9001</div>
+                            <div class="text-muted-foreground text-sm">Quality Certified</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <!-- @COMPONENT: Testimonials -->
+    <section class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-muted-foreground">Don't just take our word for it - hear from our satisfied customers.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-card rounded-xl shadow-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-accent">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground mb-6 italic">
+                        "TruckPro has transformed our logistics operations. Their fleet management system has improved our efficiency by 30% and reduced our maintenance costs significantly."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold mr-4">
+                            JS
+                        </div>
+                        <div>
+                            <div class="font-semibold text-card-foreground" data-mock="true">John Smith</div>
+                            <div class="text-muted-foreground text-sm" data-mock="true">CEO, Logistics Plus</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-card rounded-xl shadow-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-accent">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground mb-6 italic">
+                        "Outstanding customer service and reliable vehicles. We've been using TruckPro for 5 years and they continue to exceed our expectations every day."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-secondary-foreground font-bold mr-4">
+                            MR
+                        </div>
+                        <div>
+                            <div class="font-semibold text-card-foreground" data-mock="true">Maria Rodriguez</div>
+                            <div class="text-muted-foreground text-sm" data-mock="true">Operations Manager, FastTrack Delivery</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-card rounded-xl shadow-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-accent">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground mb-6 italic">
+                        "The 24/7 support is incredible. When we had a breakdown at 2 AM, their team was there within 30 minutes. That's the kind of service that keeps our business running."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-accent-foreground font-bold mr-4">
+                            DW
+                        </div>
+                        <div>
+                            <div class="font-semibold text-card-foreground" data-mock="true">David Wong</div>
+                            <div class="text-muted-foreground text-sm" data-mock="true">Fleet Manager, Regional Transport Co.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Testimonials -->
+
+    <!-- @COMPONENT: Contact Section -->
+    <section id="contact" class="py-20 bg-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Information -->
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-foreground mb-6">Get In Touch</h2>
+                    <p class="text-xl text-muted-foreground mb-8">
+                        Ready to upgrade your fleet? Our experts are here to help you find the perfect commercial vehicle solution for your business.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                                <i class="fas fa-phone text-primary-foreground"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-card-foreground">Phone</div>
+                                <div class="text-muted-foreground" data-mock="true">1-800-TRUCKPRO</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-accent-foreground"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-card-foreground">Email</div>
+                                <div class="text-muted-foreground" data-mock="true">sales@truckpro.com</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-secondary-foreground"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-card-foreground">Address</div>
+                                <div class="text-muted-foreground" data-mock="true">1234 Industrial Blvd, TruckCity, TC 12345</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                                <i class="fas fa-clock text-primary-foreground"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-card-foreground">Hours</div>
+                                <div class="text-muted-foreground" data-mock="true">Mon-Fri: 7AM-7PM | Sat: 8AM-5PM</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Commercial vehicle service image -->
+                    <div class="mt-8">
+                        <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                             alt="Professional truck service and maintenance facility" 
+                             class="rounded-xl shadow-lg w-full h-64 object-cover"/>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-card rounded-2xl shadow-xl p-8">
+                    <h3 class="text-2xl font-bold text-card-foreground mb-6">Request a Quote</h3>
+                    <form class="space-y-6" data-event="submit:handleContactForm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-card-foreground mb-2">First Name</label>
+                                <input type="text" id="firstName" name="firstName" 
+                                       class="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring" 
+                                       data-bind="form.firstName" data-mock="true" placeholder="John">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-card-foreground mb-2">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" 
+                                       class="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring" 
+                                       data-bind="form.lastName" data-mock="true" placeholder="Doe">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="company" class="block text-sm font-medium text-card-foreground mb-2">Company</label>
+                            <input type="text" id="company" name="company" 
+                                   class="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring" 
+                                   data-bind="form.company" data-mock="true" placeholder="Your Company Inc.">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-card-foreground mb-2">Email</label>
+                            <input type="email" id="email" name="email" 
+                                   class="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring" 
+                                   data-bind="form.email" data-mock="true" placeholder="john@company.com">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-card-foreground mb-2">Phone</label>
+                            <input type="tel" id="phone" name="phone" 
+                                   class="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring" 
+                                   data-bind="form.phone" data-mock="true" placeholder="(555) 123-4567">
+                        </div>
+                        
+                        <div>
+                            <label for="vehicleType" class="block text-sm font-medium text-card-foreground mb-2">Vehicle Type Interest</label>
+                            <select id="vehicleType" name="vehicleType" 
+                                    class="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring" 
+                                    data-bind="form.vehicleType">
+                                <option value="" data-mock="true">Select vehicle type</option>
+                                <option value="heavy-duty" data-mock="true">Heavy Duty Trucks</option>
+                                <option value="medium-duty" data-mock="true">Medium Duty Trucks</option>
+                                <option value="light-commercial" data-mock="true">Light Commercial Vehicles</option>
+                                <option value="fleet-management" data-mock="true">Fleet Management</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-card-foreground mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" 
+                                      class="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring" 
+                                      data-bind="form.message" data-mock="true" placeholder="Tell us about your specific needs..."></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-lg" 
+                                data-implementation="Should validate form and submit to backend">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-primary text-primary-foreground py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">TruckPro Industries</h3>
+                    <p class="text-primary-foreground/80 mb-4">
+                        Leading provider of commercial vehicles and logistics solutions, built for reliability and performance.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Fleet Management</a></li>
+                        <li><a href="#services" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Logistics Solutions</a></li>
+                        <li><a href="#services" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Commercial Sales</a></li>
+                        <li><a href="#services" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Maintenance & Repair</a></li>
+                        <li><a href="#services" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Driver Training</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Fleet -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Fleet</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#fleet" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Heavy Duty Trucks</a></li>
+                        <li><a href="#fleet" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Medium Duty Trucks</a></li>
+                        <li><a href="#fleet" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Light Commercial</a></li>
+                        <li><a href="#fleet" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Used Vehicles</a></li>
+                        <li><a href="#fleet" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors">Financing Options</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="text-primary-foreground/80" data-mock="true">
+                            <i class="fas fa-phone mr-2"></i>
+                            1-800-TRUCKPRO
+                        </li>
+                        <li class="text-primary-foreground/80" data-mock="true">
+                            <i class="fas fa-envelope mr-2"></i>
+                            sales@truckpro.com
+                        </li>
+                        <li class="text-primary-foreground/80" data-mock="true">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            1234 Industrial Blvd
+                        </li>
+                        <li class="text-primary-foreground/80" data-mock="true">
+                            TruckCity, TC 12345
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-divider my-8"></div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-primary-foreground/80 text-sm" data-mock="true">
+                    © 2024 TruckPro Industries. All rights reserved.
+                </div>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">Privacy Policy</a>
+                    <a href="#" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">Terms of Service</a>
+                    <a href="#" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // TODO: Implement business logic, API calls, and state management
+        
+        (function() {
+            // Mobile menu toggle
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('[data-event*="toggleMobileMenu"]')) {
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    mobileMenu.classList.toggle('hidden');
+                }
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Form handling placeholder
+            document.addEventListener('submit', function(e) {
+                if (e.target.closest('[data-event*="handleContactForm"]')) {
+                    e.preventDefault();
+                    // TODO: Implement form validation and submission
+                    alert('Form submission would be handled here');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

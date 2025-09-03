@@ -100,25 +100,6 @@ export default function AboutSection() {
               className="rounded-2xl shadow-2xl w-full"
               data-testid="img-about-facility"
             />
-
-            {/* Overlay stats card */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="absolute -bottom-8 -left-8 bg-card rounded-xl premium-shadow p-6 border border-border"
-              data-testid="card-certification"
-            >
-              <div className="text-center">
-                <div className="text-2xl font-bold text-gradient mb-1" data-testid="text-certification-iso">
-                  ISO 9001:2015
-                </div>
-                <div className="text-muted-foreground text-sm font-semibold" data-testid="text-certification-label">
-                  Quality Management
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
