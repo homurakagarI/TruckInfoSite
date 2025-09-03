@@ -1,0 +1,18 @@
+# Vercel ignore file
+server/
+client/src/
+*.md
+.git/
+.local/
+node_modules/
+.env*
+!.env.production
+tsconfig.json
+vite.config.ts
+tailwind.config.ts
+postcss.config.js
+components.json
+drizzle.config.ts
+deploy.sh
+Procfile
+replit.md

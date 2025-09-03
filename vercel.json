@@ -1,16 +1,20 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run vercel-build",
   "outputDirectory": "dist/public",
   "functions": {
-    "api/contact.js": {
+    "api/*.js": {
       "runtime": "@vercel/node@3"
     }
   },
   "routes": [
     {
-      "src": "/api/contact",
-      "dest": "/api/contact.js"
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
