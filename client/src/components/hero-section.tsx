@@ -28,22 +28,22 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-black text-primary-foreground mb-6 leading-tight"
+            className="text-5xl md:text-7xl font-black text-primary-foreground mb-6 leading-tight tracking-tight"
             data-testid="text-hero-title"
           >
-            Built for the{" "}
-            <span className="text-accent">Road Ahead</span>
+            Enterprise-Grade{" "}
+            <span className="text-accent">Commercial Solutions</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-primary-foreground/90 mb-8 font-medium leading-relaxed"
+            className="text-xl md:text-2xl text-primary-foreground/95 mb-10 font-medium leading-relaxed max-w-4xl mx-auto"
             data-testid="text-hero-subtitle"
           >
-            Premium commercial vehicles and logistics solutions that power your business forward.
-            Reliable, efficient, and engineered for performance.
+            Industry-leading commercial vehicle solutions and fleet management services trusted by Fortune 500 companies. 
+            <span className="font-semibold text-accent">Engineered for Excellence. Built for Results.</span>
           </motion.p>
 
           <motion.div
@@ -54,17 +54,17 @@ export default function HeroSection() {
           >
             <button
               onClick={() => scrollToSection("contact")}
-              className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground px-10 py-5 rounded-xl text-lg font-bold transition-all duration-300 hover:shadow-2xl hover:scale-105 border border-accent/20 backdrop-blur-sm"
               data-testid="button-hero-get-quote"
             >
-              Get Your Quote
+              Request Enterprise Quote
             </button>
             <button
               onClick={() => scrollToSection("fleet")}
-              className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300"
+              className="border-2 border-primary-foreground/80 text-primary-foreground hover:bg-primary-foreground hover:text-primary px-10 py-5 rounded-xl text-lg font-bold transition-all duration-300 backdrop-blur-sm hover:shadow-xl"
               data-testid="button-hero-view-fleet"
             >
-              View Fleet
+              Explore Solutions
             </button>
           </motion.div>
         </div>

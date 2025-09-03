@@ -37,12 +37,17 @@ export default function Footer() {
             viewport={{ once: true }}
             data-testid="footer-company-info"
           >
-            <h3 className="text-2xl font-bold mb-4" data-testid="text-footer-company-name">
+            <h3 className="text-2xl font-bold mb-4 text-gradient" data-testid="text-footer-company-name">
               TruckPro Industries
             </h3>
-            <p className="text-primary-foreground/80 mb-4" data-testid="text-footer-company-description">
-              Leading provider of commercial vehicles and logistics solutions, built for reliability and performance.
+            <p className="text-primary-foreground/90 mb-6 leading-relaxed" data-testid="text-footer-company-description">
+              Premier enterprise fleet management solutions trusted by Fortune 500 companies. 
+              ISO 9001:2015 certified with 15+ years of industry excellence.
             </p>
+            <div className="mb-4 text-sm text-primary-foreground/80">
+              <div className="font-semibold mb-1">Certifications & Compliance:</div>
+              <div>ISO 9001:2015 • FMCSA Approved • DOT Certified • EPA Compliant</div>
+            </div>
             <div className="flex space-x-4">
               <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors" data-testid="link-social-facebook">
                 <Facebook className="h-6 w-6" />
@@ -148,7 +153,7 @@ export default function Footer() {
           className="flex flex-col md:flex-row justify-between items-center"
         >
           <div className="text-primary-foreground/80 text-sm" data-testid="text-footer-copyright">
-            © 2024 TruckPro Industries. All rights reserved.
+            © 2024 TruckPro Industries. All rights reserved. | ISO 9001:2015 Certified
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm" data-testid="link-footer-privacy">

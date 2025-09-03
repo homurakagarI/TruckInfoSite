@@ -94,11 +94,12 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6" data-testid="text-contact-title">
-              Get In Touch
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight" data-testid="text-contact-title">
+              <span className="text-gradient">Enterprise</span> Consultation
             </h2>
             <p className="text-xl text-muted-foreground mb-8" data-testid="text-contact-subtitle">
-              Ready to upgrade your fleet? Our experts are here to help you find the perfect commercial vehicle solution for your business.
+              Connect with our enterprise solutions specialists to discover how our fleet management platform 
+              can optimize your operations, reduce costs, and enhance performance across your commercial vehicle fleet.
             </p>
 
             <div className="space-y-6">
@@ -149,11 +150,11 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-card rounded-2xl shadow-xl p-8"
+            className="bg-card rounded-2xl premium-shadow p-8 border border-border/50"
             data-testid="form-contact-container"
           >
             <h3 className="text-2xl font-bold text-card-foreground mb-6" data-testid="text-form-title">
-              Request a Quote
+              Enterprise Solution Inquiry
             </h3>
             
             <Form {...form}>
@@ -279,7 +280,7 @@ export default function ContactSection() {
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-lg"
                   data-testid="button-submit-contact"
                 >
-                  {submitContactMutation.isPending ? "Sending..." : "Send Message"}
+                  {submitContactMutation.isPending ? "Processing..." : "Request Enterprise Consultation"}
                 </Button>
               </form>
             </Form>

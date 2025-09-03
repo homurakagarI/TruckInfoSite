@@ -2,33 +2,33 @@ import { motion } from "framer-motion";
 
 const fleetData = [
   {
-    title: "Heavy Duty Trucks",
-    description: "Built for the toughest jobs with superior power, reliability, and fuel efficiency.",
-    price: "Starting at $85,000",
+    title: "Class 8 Heavy Duty Trucks",
+    description: "Enterprise-grade heavy duty trucks engineered for long-haul operations with advanced fuel efficiency systems, predictive maintenance technology, and 500,000+ mile durability ratings.",
+    price: "Enterprise Pricing Available",
     image: "https://images.unsplash.com/photo-1609137144813-7d9921338f24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    alt: "Heavy duty commercial truck",
+    alt: "Class 8 heavy duty commercial truck",
   },
   {
-    title: "Medium Duty Trucks",
-    description: "Perfect balance of capability and maneuverability for urban and regional delivery.",
-    price: "Starting at $55,000",
+    title: "Medium Duty Fleet Solutions",
+    description: "Versatile medium duty trucks optimized for regional distribution with integrated telematics, advanced safety systems, and customizable body configurations for specialized applications.",
+    price: "Fleet Discounts Available",
     image: "https://images.unsplash.com/photo-1566024287286-457247b70310?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    alt: "Medium duty delivery truck",
+    alt: "Medium duty delivery truck with fleet graphics",
   },
   {
-    title: "Light Commercial",
-    description: "Efficient and versatile vehicles ideal for small business and local delivery needs.",
-    price: "Starting at $35,000",
+    title: "Light Commercial Vehicles",
+    description: "Purpose-built light commercial vehicles featuring advanced cargo management systems, fuel-efficient powertrains, and comprehensive warranty coverage for urban delivery operations.",
+    price: "Volume Pricing Available",
     image: "https://images.unsplash.com/photo-1623874514711-0f321325f318?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    alt: "Light commercial delivery van",
+    alt: "Professional light commercial delivery van",
   },
 ];
 
 const stats = [
-  { value: "500+", label: "Vehicles Sold" },
-  { value: "200+", label: "Happy Clients" },
-  { value: "15+", label: "Years Experience" },
-  { value: "99.8%", label: "Fleet Uptime" },
+  { value: "2,500+", label: "Fleet Vehicles Delivered" },
+  { value: "150+", label: "Enterprise Clients" },
+  { value: "15+", label: "Years of Excellence" },
+  { value: "99.8%", label: "Guaranteed Uptime" },
 ];
 
 export default function FleetSection() {
@@ -49,11 +49,12 @@ export default function FleetSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4" data-testid="text-fleet-title">
-            Our Fleet
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight" data-testid="text-fleet-title">
+            <span className="text-gradient">Premium</span> Commercial Fleet
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto" data-testid="text-fleet-subtitle">
-            Modern, reliable commercial vehicles built for performance, efficiency, and durability.
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto" data-testid="text-fleet-subtitle">
+            Industry-leading commercial vehicles engineered for enterprise operations. Each vehicle features advanced telematics, 
+            predictive maintenance systems, and comprehensive warranty coverage backed by our nationwide service network.
           </p>
         </motion.div>
 
@@ -65,7 +66,7 @@ export default function FleetSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-card rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="bg-card rounded-xl premium-shadow overflow-hidden hover:shadow-2xl transition-all duration-300 border border-border/50 hover:border-primary/20"
               data-testid={`card-vehicle-${vehicle.title.toLowerCase().replace(/\s+/g, '-')}`}
             >
               <img

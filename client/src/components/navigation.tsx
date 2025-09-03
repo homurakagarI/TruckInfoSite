@@ -25,7 +25,7 @@ export default function Navigation() {
   return (
     <nav
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-card/95 backdrop-blur-md shadow-lg" : "bg-card"
+        scrolled ? "glass-effect premium-shadow" : "bg-card"
       } border-b border-border`}
       data-testid="navigation-main"
     >
@@ -33,7 +33,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-primary" data-testid="text-logo">
+              <h1 className="text-2xl font-bold text-gradient" data-testid="text-logo">
                 TruckPro
               </h1>
             </div>

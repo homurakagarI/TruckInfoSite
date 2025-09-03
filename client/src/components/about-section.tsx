@@ -34,14 +34,14 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6" data-testid="text-about-title">
-              Built on Excellence,{" "}
-              <span className="text-primary">Driven by Innovation</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight" data-testid="text-about-title">
+              Industry Leadership Through{" "}
+              <span className="text-gradient">Proven Excellence</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed" data-testid="text-about-description">
-              For over 15 years, TruckPro Industries has been at the forefront of commercial vehicle innovation.
-              We understand that your business depends on reliable transportation, and we're committed to
-              delivering solutions that exceed your expectations.
+              Since 2009, TruckPro Industries has established itself as the premier provider of commercial vehicle solutions, 
+              serving over 200 Fortune 500 companies across North America. Our commitment to operational excellence 
+              and innovative fleet management technologies has made us the trusted partner for industry leaders.
             </p>
 
             <div className="space-y-6">
@@ -107,15 +107,15 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="absolute -bottom-8 -left-8 bg-card rounded-xl shadow-xl p-6 border border-border"
+              className="absolute -bottom-8 -left-8 bg-card rounded-xl premium-shadow p-6 border border-border"
               data-testid="card-certification"
             >
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-1" data-testid="text-certification-iso">
-                  ISO 9001
+                <div className="text-2xl font-bold text-gradient mb-1" data-testid="text-certification-iso">
+                  ISO 9001:2015
                 </div>
-                <div className="text-muted-foreground text-sm" data-testid="text-certification-label">
-                  Quality Certified
+                <div className="text-muted-foreground text-sm font-semibold" data-testid="text-certification-label">
+                  Quality Management
                 </div>
               </div>
             </motion.div>

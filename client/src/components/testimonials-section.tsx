@@ -4,24 +4,24 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     rating: 5,
-    text: "TruckPro has transformed our logistics operations. Their fleet management system has improved our efficiency by 30% and reduced our maintenance costs significantly.",
-    name: "John Smith",
-    title: "CEO, Logistics Plus",
-    initials: "JS",
+    text: "TruckPro's enterprise fleet management platform has revolutionized our supply chain operations. We've achieved a 32% reduction in operational costs and 99.9% fleet uptime across our 200-vehicle operation.",
+    name: "Sarah Chen",
+    title: "VP of Operations, GlobalLogistics Corp",
+    initials: "SC",
   },
   {
     rating: 5,
-    text: "Outstanding customer service and reliable vehicles. We've been using TruckPro for 5 years and they continue to exceed our expectations every day.",
-    name: "Maria Rodriguez",
-    title: "Operations Manager, FastTrack Delivery",
-    initials: "MR",
+    text: "As a Fortune 500 company, we demand excellence. TruckPro has consistently delivered with their comprehensive fleet solutions, helping us maintain our industry-leading delivery performance standards.",
+    name: "Michael Thompson",
+    title: "Chief Supply Chain Officer, MegaCorp Industries",
+    initials: "MT",
   },
   {
     rating: 5,
-    text: "The 24/7 support is incredible. When we had a breakdown at 2 AM, their team was there within 30 minutes. That's the kind of service that keeps our business running.",
-    name: "David Wong",
-    title: "Fleet Manager, Regional Transport Co.",
-    initials: "DW",
+    text: "The predictive maintenance capabilities and enterprise-grade support have been game-changing. TruckPro's team responds within 15 minutes, and their preventive approach has eliminated unexpected breakdowns entirely.",
+    name: "Jennifer Park",
+    title: "Director of Fleet Operations, National Express",
+    initials: "JP",
   },
 ];
 
@@ -36,11 +36,11 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4" data-testid="text-testimonials-title">
-            What Our Clients Say
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight" data-testid="text-testimonials-title">
+            <span className="text-gradient">Enterprise Client</span> Success Stories
           </h2>
           <p className="text-xl text-muted-foreground" data-testid="text-testimonials-subtitle">
-            Don't just take our word for it - hear from our satisfied customers.
+            Trusted by Fortune 500 companies and industry leaders worldwide. See how our solutions drive measurable results.
           </p>
         </motion.div>
 
@@ -52,7 +52,7 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-card rounded-xl shadow-lg p-8"
+              className="bg-card rounded-xl premium-shadow p-8 border border-border/50 hover:border-primary/20 transition-all duration-300"
               data-testid={`card-testimonial-${index}`}
             >
               <div className="flex items-center mb-4">
