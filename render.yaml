@@ -1,0 +1,11 @@
+# Render.com deployment configuration
+# This file helps Render understand how to build and run your app
+
+# Build Command (what Render runs to build your app)
+# npm run build:all
+
+# Start Command (what Render runs to start your app)
+# npm run start
+
+# Environment
+# NODE_ENV=production will be set automatically by Render
